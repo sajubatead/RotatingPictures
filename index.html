@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<style>
+
+#friends { position: absolute;}
+#friends1 { position: absolute;}
+#friends2 { position: absolute; }
+#friends3 { position: absolute; }
+
+.logo {
+  height: 100px;
+  width: 100px;
+}
+
+.logoEri {
+  height: 120px;
+  width: 200px;
+}
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+  <script>
+  var t = 0;
+
+
+  function moveit() {
+      t += 0.004;
+      var r = 210;
+      var xcenter = 580;
+      var ycenter = 260;
+      var newLeft = Math.floor(xcenter + (r * Math.cos(t)));
+      var newTop = Math.floor(ycenter + (r * Math.sin(t)));
+      var newLeft1 = Math.floor(xcenter + ((r+50) * Math.cos(t + 719.56)));
+      var newTop1 = Math.floor(ycenter + ((r+50) * Math.sin(t + 719.53)));
+      var newLeft2 = Math.floor(xcenter + (r * Math.cos(t + 850)));
+      var newTop2 = Math.floor(ycenter + (r * Math.sin(t + 850)));
+      var newLeft3 = Math.floor(xcenter + ((r+60) * Math.cos(t + 1079)));
+      var newTop3 = Math.floor(ycenter + ((r+15) * Math.sin(t + 1079.1)));
+
+      $('#friends').animate({
+          top: newTop,
+          left: newLeft,
+      }, 1, function() {
+          moveit();
+      });
+
+      $('#friends1').animate({
+          top: newTop1,
+          left: newLeft1,
+      }, 1, function() {
+                moveit();
+      });
+
+      $('#friends2').animate({
+          top: newTop2,
+          left: newLeft2,
+      }, 1, function() {
+          moveit();
+      });
+
+      $('#friends3').animate({
+          top: newTop3,
+          left: newLeft3,
+      }, 1, function() {
+          moveit();
+      });
+  }
+
+  $(document).ready(function(){
+      moveit();
+  });
+
+</script>
+
+<div  id="friends">
+  <img class="logo" src="https://s-media-cache-ak0.pinimg.com/736x/ed/cc/2c/edcc2cbc7418d50a74cee4a8ea9290b9.jpg"/>
+</div>
+
+<div  id="friends1">
+  <img class="logoEri" src="http://editorial.designtaxi.com/editorial-images/news-hidlogos21092015/5.jpg"/>
+</div>
+
+<div  id="friends2">
+  <img class="logo" src="http://1.bp.blogspot.com/-SQRgW_LyeZY/UBha1vYBsxI/AAAAAAAABQo/yu5-ur8FmhE/s1600/30FamousLogos_5.jpg"/>
+</div>
+
+<div  id="friends3">
+  <img class="logo" src="http://33hsrj1iv2m43o25k925e51f.wpengine.netdna-cdn.com/wp-content/uploads/2014/05/mc-logoFix.png"/>
+</div>
+
+</body>
+</html>
